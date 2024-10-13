@@ -1,12 +1,10 @@
-import express, { Request, Response } from "express";
-import upload from "./upload";
-import prisma from "./prisma/prismaClient";
 import cors from "cors";
-import { Item } from "@prisma/client";
-import buildGodownTree from "./buildTree";
+import express, { Request, Response } from "express";
+import prisma from "./prisma/prismaClient";
+import upload from "./upload";
 
 const app = express();
-const PORT = 8000;
+const PORT = 5000;
 
 app.use(cors());
 
