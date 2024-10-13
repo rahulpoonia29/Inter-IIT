@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Godown {
+  id         String   @id @unique
+  name       String
+  parentId   String?
+  parent     Godown?  @relation("SubGodowns", fields: [parentId], references: [id])
+  subGodowns Godown[] @relation("SubGodowns")
+  items      Item[]   @relation("GodownItems")
+}
+
+model Item {
+  id         String     @id @unique
+  name       String
+  quantity   Int
+  category   String
+  price      Float
+  status     ItemStatus
+  brand      String
+  image_url  String
+  attributes Json
+  godownId   String
+  godown     Godown     @relation("GodownItems", fields: [godownId], references: [id])
+
+  @@unique([id, godownId])
+}
+
+enum ItemStatus {
+  in_stock
+  out_of_stock
+}
