@@ -59,9 +59,9 @@ This is the repositery for Inter IIT Task 2024, a tree view was to be made with 
 
 3. Set up the environment variables by copying `.env`and updating the values.
 
-```env
-DATABASE_URL="your-database-url"
-```
+    ```env
+    DATABASE_URL="your-database-url"
+    ```
 
 4. Run the Prisma migrations to set up the database schema:
     ```sh
@@ -103,9 +103,9 @@ DATABASE_URL="your-database-url"
     ```
 
 3. Set up the environment variables by copying `.env` and updating the values.
-```env
-NEXT_PUBLIC_BACKEND_URL="http://localhost:5000" (Update as needed)
-```
+    ```env
+    NEXT_PUBLIC_BACKEND_URL="http://localhost:5000" (Update as needed)
+    ```
 
 4. Start the development server:
     ```sh
