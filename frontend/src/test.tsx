@@ -16,9 +16,7 @@ export type Item = {
 const array = [];
 
 items.forEach((item) => {
-	Object.keys(item.attributes).forEach((key) => {
-		array.push(key);
-	});
+	array.push(new URL(item.image_url).protocol);
 });
 
 export const uniqueAttributes = [...new Set(array)];

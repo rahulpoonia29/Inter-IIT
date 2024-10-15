@@ -2,26 +2,8 @@ import { ItemStatus } from "@prisma/client";
 import { godowns } from "./data/godown";
 import prisma from "./prisma/prismaClient";
 import { items } from "./data/items";
-
-type Godown = {
-	id: string;
-	name: string;
-	parent_godown?: string;
-};
-
-type Item = {
-	item_id: string;
-	name: string;
-	quantity: number;
-	category: string;
-	price: number;
-	status: string;
-	godown_id: string;
-	brand: string;
-	attributes: Record<string, string | number | undefined>;
-	image_url: string;
-};
-
+import Godown from "./types/Godown";
+import Item from "./types/Item";
 
 const idleGodown: Godown[] = [];
 

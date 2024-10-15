@@ -8,6 +8,7 @@ import { ScrollArea } from "./components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "./components/ui/sheet";
 import { useItemContext } from "./context/itemContext";
 import { useNodeContext } from "./context/treeContext";
+import { uniqueAttributes } from "./test";
 
 export const BACKEND_URL = "http://localhost:8000";
 
@@ -32,7 +33,7 @@ export type Item = {
 	godownId: string;
 };
 
-// console.log(uniqueAttributes);
+console.log(uniqueAttributes);
 
 function App() {
 	const { isLoading, nodes } = useNodeContext();
