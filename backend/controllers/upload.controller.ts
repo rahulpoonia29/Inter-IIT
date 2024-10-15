@@ -8,6 +8,30 @@ import Item from "../types/Item";
 
 const idleGodown: Godown[] = [];
 
+// Function to run the upload process without an API call
+export const runUploadProcess = async () => {
+	try {
+		console.log(
+			"Godown length",
+			godowns.length,
+			"Item length",
+			items.length
+		);
+
+		// Upload Godowns
+		for (const godown of godowns as Godown[]) {
+			await uploadGodown(godown);
+		}
+
+		// Upload Items
+		await uploadItems(items as Item[]);
+
+		console.log("Data uploaded successfully");
+	} catch (error) {
+		console.error("Error uploading data:", error);
+	}
+};
+
 export const uploadData = async (req: Request, res: Response) => {
 	try {
 		console.log(
